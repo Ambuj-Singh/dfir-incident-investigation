@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+env/
+venv/
+*.egg-info/
+dist/
+build/
+.DS_Store
+*.log
+*.sqlite
+*.db
+# Large evidence files - keep out of git
+evidence/logs/
+evidence/pcap/
+evidence/screenshots/
+evidence/memory_dumps/
+evidence/malware_metadata/

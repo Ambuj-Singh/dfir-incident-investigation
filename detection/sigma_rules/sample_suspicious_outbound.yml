@@ -1,0 +1,18 @@
+title: Suspicious High Frequency Outbound TLS
+id: 11111111-1111-1111-1111-111111111111
+description: Detects high-frequency outbound TLS connections to rare IPs/domains indicative of C2 beaconing.
+author: DFIR Analyst
+date: 2026/05/06
+status: experimental
+logsource:
+  product: network
+detection:
+  selection:
+    dest_ip: ["203.0.113.55"]
+  condition: selection | count by src_ip, dest_ip, dest_port > 10
+fields:
+  - src_ip
+  - dest_ip
+falsepositives:
+  - misconfigured services
+level: high
